@@ -1,0 +1,22 @@
+# LEITWERK runtime dependencies.
+#
+# The core pipeline (loading, features, retrieval, belief, decision, output)
+# runs on the Python standard library alone. Everything below is S1 media
+# perception and the semantic layer. With the shipped media_cache.json and
+# semantic_cache.json, output.csv is identical even if none of these are
+# installed; they are needed only to perceive new media or embed new text.
+#
+# Pinned to the versions that produced the shipped output.csv, on Python 3.14.
+
+# S1 image perception: OCR for posters and screenshots. ONNX runtime, CPU only,
+# no system binary required (unlike pytesseract).
+rapidocr-onnxruntime==1.2.3
+
+# S1 voice perception: CTranslate2 Whisper. CPU int8, greedy decoding for
+# determinism. Downloads the `base` model on first run (~74 MB) and caches it.
+faster-whisper==1.2.1
+
+# Semantic layer: local sentence embeddings for intent similarity and hybrid
+# retrieval. CPU, deterministic, cached. Downloads all-MiniLM-L6-v2 (~90 MB)
+# on first run.
+sentence-transformers==5.6.1

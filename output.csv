@@ -1,0 +1,111 @@
+message_id,action,message_type,reason,confidence,evidence_message_ids
+msg_023,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.81,message_0243;message_0102
+msg_091,mute,scam,This is the first message from the sender and it asks for sensitive verification or payment.,0.85,message_0238;message_0381
+msg_090,digest,unknown,"The sender is unfamiliar, but the message does not show urgency, payment pressure, or safety risk.",0.82,none
+msg_048,mute,scam,The message pushes the user to pay through an unofficial link or QR code.,0.85,message_0151;message_0152
+msg_040,mute,greeting,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0136;message_0135
+msg_075,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.81,message_0206;message_0205
+msg_005,notify,personal,The sender directly asks this user for a response or action.,0.88,message_0065;message_0049
+msg_104,mute,personal,"Similar historical messages were ignored, dismissed, or muted by this user.",0.85,message_0224;message_0050
+msg_069,mute,greeting,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0177;message_0042
+msg_107,mute,scam,"The message tries to instruct the router, but the routing decision should be based on the actual content and risk.",0.85,message_0056;message_0023
+msg_070,mute,scam,The message asks for urgent OTP or account verification through a suspicious flow.,0.84,message_0369;message_0195
+msg_003,notify,business_update,A verified business is sending an update that matches the user's recent order history.,0.89,message_0031;message_0061
+msg_099,digest,personal,"The sender is trusted, but the message has no urgent action or safety relevance.",0.82,message_0227;message_0249
+msg_008,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.81,message_0296;message_0072
+msg_092,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.82,message_0346;message_0345
+msg_060,notify,urgent,The message is from a work context and contains a direct deadline or meeting dependency.,0.88,message_0284;message_0375
+msg_004,notify,event,A verified business is sending a reminder that matches the user's recent booking history.,0.88,message_0005;message_0064
+msg_030,mute,promotion,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.84,message_0115;message_0335
+msg_045,notify,personal,The sender directly asks this user for a response or action.,0.88,message_0146;message_0061
+msg_052,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.85,message_0208;message_0207
+msg_009,mute,personal,The user has muted this group and the message carries no direct mention or urgent action.,0.85,message_0074;message_0073
+msg_071,digest,personal,"The sender is trusted, but the message has no urgent action or safety relevance.",0.82,message_0197;message_0198
+msg_016,mute,scam,The message pushes the user to pay through an unofficial link or QR code.,0.84,message_0024;message_0087
+msg_065,digest,promotion,The message is promotional but matches a topic or business the user has opted into.,0.82,message_0261;message_0185
+msg_038,mute,forward,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0131;message_0132
+msg_086,notify,event,A verified business is sending a reminder that matches the user's recent booking history.,0.88,message_0222;message_0006
+msg_014,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.85,message_0017;message_0083
+msg_094,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.84,message_0356;message_0203
+msg_029,mute,promotion,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.84,message_0113;message_0401
+msg_105,mute,forward,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0233;message_0122
+msg_002,notify,urgent,The message is from a work context and contains a direct deadline or meeting dependency.,0.88,message_0003;message_0266
+msg_010,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.81,message_0011;message_0075
+msg_078,mute,scam,The message asks the user to share bank account or card details.,0.84,message_0211;message_0212
+msg_013,digest,promotion,"The offer is potentially relevant, but it does not need immediate attention.",0.81,message_0081;message_0082
+msg_018,mute,scam,The message claims the user has won something and asks them to claim it quickly.,0.84,message_0026;message_0091
+msg_044,mute,scam,The message asks for urgent OTP or account verification through a suspicious flow.,0.84,message_0143;message_0144
+msg_032,digest,personal,The message is safe casual chat with no urgent action required.,0.82,message_0119;message_0285
+msg_106,digest,event,The message is about a scheduled event that is not immediate enough to interrupt the user.,0.81,message_0234;message_0293
+msg_006,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0029;message_0067
+msg_109,mute,scam,"The message tries to instruct the router, but the routing decision should be based on the actual content and risk.",0.84,message_0151;message_0152
+msg_108,mute,scam,"The message tries to instruct the router, but the routing decision should be based on the actual content and risk.",0.85,message_0094;message_0093
+msg_019,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.85,message_0277;message_0094
+msg_088,mute,promotion,"Similar historical messages were ignored, dismissed, or muted by this user.",0.85,message_0224;message_0050
+msg_056,notify,personal,"The user muted this group, but the message directly mentions them and needs a response.",0.88,message_0359;message_0168
+msg_027,digest,promotion,The message is promotional but matches a topic or business the user has opted into.,0.82,message_0007;message_0109
+msg_050,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.84,message_0279;message_0155
+msg_083,digest,personal,The message is safe casual chat with no urgent action required.,0.82,message_0219
+msg_063,mute,scam,The message demands an upfront fee before releasing a promised amount.,0.84,message_0181;message_0182
+msg_033,digest,greeting,The message is a harmless greeting that can be read later.,0.82,message_0121;message_0122
+msg_061,mute,greeting,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0042;message_0177
+msg_020,mute,scam,The message pushes the user to pay through an unofficial link or QR code.,0.84,message_0096;message_0095
+msg_017,mute,scam,The message pushes the user to pay through an unofficial link or QR code.,0.84,message_0089;message_0090
+msg_058,mute,forward,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0241;message_0078
+msg_026,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.85,message_0032;message_0107
+msg_047,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0150;message_0067
+msg_046,mute,scam,The message asks for urgent OTP or account verification through a suspicious flow.,0.85,message_0148;message_0147
+msg_042,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0140;message_0139
+msg_079,mute,scam,The message asks for urgent OTP or account verification through a suspicious flow.,0.84,message_0369;message_0023
+msg_098,notify,urgent,A close contact sent a short urgent request that should interrupt the user.,0.88,message_0359;message_0168
+msg_037,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0001;message_0410
+msg_007,digest,event,"The message is useful group information, but it is not urgent enough to interrupt the user.",0.82,message_0070;message_0069
+msg_085,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.85,message_0221;message_0023
+msg_001,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0057;message_0240
+msg_021,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0068;message_0029
+msg_028,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.85,message_0034;message_0112
+msg_012,mute,forward,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0079;message_0178
+msg_064,mute,scam,The message asks the user to share bank account or card details.,0.84,message_0087;message_0024
+msg_103,notify,personal,The sender directly asks this user for a response or action.,0.88,message_0065;message_0049
+msg_031,digest,event,"The message is useful group information, but it is not urgent enough to interrupt the user.",0.82,message_0117;message_0249
+msg_057,notify,urgent,The message is from a work context and contains a direct deadline or meeting dependency.,0.88,message_0003;message_0059
+msg_087,mute,scam,"The message tries to instruct the router, but the routing decision should be based on the actual content and risk.",0.84,message_0223;message_0164
+msg_067,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0067;message_0068
+msg_039,notify,personal,The sender directly asks this user for a response or action.,0.88,message_0364;message_0051
+msg_082,notify,urgent,A close contact sent a short urgent request that should interrupt the user.,0.88,message_0218;message_0397
+msg_066,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.84,message_0402;message_0052
+msg_049,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.81,message_0154;message_0291
+msg_015,mute,scam,The message asks for urgent OTP or account verification through a suspicious flow.,0.85,message_0085;message_0023
+msg_051,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.84,message_0257;message_0103
+msg_097,digest,personal,"The sender is trusted, but the message has no urgent action or safety relevance.",0.82,message_0054;message_0359
+msg_089,digest,unknown,"The sender is unfamiliar, but the message does not show urgency, payment pressure, or safety risk.",0.82,message_0301
+msg_053,mute,forward,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.84,message_0411;message_0161
+msg_059,mute,scam,The message asks the user to share bank account or card details.,0.84,message_0195;message_0023
+msg_024,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.84,message_0257;message_0103
+msg_072,mute,scam,The message asks for urgent OTP or account verification through a suspicious flow.,0.84,message_0085;message_0023
+msg_036,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.85,message_0283;message_0127
+msg_076,mute,scam,The sender uses a lookalike domain that does not match the brand's official domain.,0.85,message_0208;message_0207
+msg_055,notify,personal,The sender directly asks this user for a response or action.,0.88,message_0166;message_0165
+msg_102,notify,urgent,The message is from a work context and contains a direct deadline or meeting dependency.,0.88,message_0230;message_0059
+msg_080,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.88,message_0130;message_0001
+msg_093,digest,business_update,The verified business message is legitimate but does not require immediate attention.,0.82,message_0347;message_0387
+msg_034,mute,greeting,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0013;message_0014
+msg_035,digest,business_update,A verified business is sending a legitimate but non-urgent update.,0.81,message_0281;message_0125
+msg_101,digest,personal,"The sender is trusted, but the message has no urgent action or safety relevance.",0.82,message_0268;message_0229
+msg_041,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.84,message_0137;message_0138
+msg_011,mute,greeting,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.85,message_0014;message_0013
+msg_110,mute,scam,"The message tries to instruct the router, but the routing decision should be based on the actual content and risk.",0.85,message_0238;message_0381
+msg_095,mute,scam,"The message tries to instruct the router, but the routing decision should be based on the actual content and risk.",0.85,message_0087;message_0024
+msg_074,mute,promotion,The sender has a pattern of repeated forwards or greetings that the user usually ignores.,0.84,message_0203;message_0204
+msg_073,mute,scam,The message pushes the user to pay through an unofficial link or QR code.,0.84,message_0024;message_0087
+msg_054,mute,scam,The message demands an upfront fee before releasing a promised amount.,0.84,message_0389;message_0163
+msg_068,digest,personal,The message is safe casual chat with no urgent action required.,0.82,message_0191;message_0192
+msg_100,notify,urgent,The message is from a work context and contains a direct deadline or meeting dependency.,0.88,message_0362;message_0228
+msg_062,digest,forward,"The message is useful group information, but it is not urgent enough to interrupt the user.",0.81,message_0043;message_0029
+msg_096,digest,unknown,"The sender is unfamiliar, but the message does not show urgency, payment pressure, or safety risk.",0.82,none
+msg_043,notify,urgent,A trusted group admin sent a time-sensitive update that should interrupt the user.,0.87,message_0130;message_0001
+msg_077,notify,event,A school admin sent a same-day operational update that the user is likely to need immediately.,0.88,message_0403;message_0051
+msg_081,notify,event,A school admin sent a same-day operational update that the user is likely to need immediately.,0.88,message_0217;message_0058
+msg_025,notify,business_update,A verified business is sending an update that matches the user's recent order history.,0.89,message_0004;message_0105
+msg_084,mute,promotion,The user has opted out of or repeatedly dismissed similar marketing messages.,0.85,message_0220;message_0391
+msg_022,mute,scam,A payment is being collected through a personal channel rather than the official one.,0.85,message_0099;message_0100

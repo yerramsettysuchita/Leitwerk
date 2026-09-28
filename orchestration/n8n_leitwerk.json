@@ -1,0 +1,191 @@
+{
+  "name": "LEITWERK - Message Notification Router",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "leitwerk-route",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "n0-webhook",
+      "name": "Incoming message",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-320, 300],
+      "webhookId": "leitwerk-route"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s1/perceive",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $json.body.message_id }) }}",
+        "options": { "timeout": 60000 }
+      },
+      "id": "n1-perceive",
+      "name": "S1 PERCEIVE - OCR / ASR",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-100, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s2/featurize",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $('Incoming message').item.json.body.message_id }) }}",
+        "options": {}
+      },
+      "id": "n2-featurize",
+      "name": "S2 FEATURIZE - signals",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [120, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s3/retrieve",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $('Incoming message').item.json.body.message_id }) }}",
+        "options": {}
+      },
+      "id": "n3-retrieve",
+      "name": "S3 RETRIEVE - evidence",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [340, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s4/believe",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $('Incoming message').item.json.body.message_id }) }}",
+        "options": {}
+      },
+      "id": "n4-believe",
+      "name": "S4 BELIEVE - dual posterior",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [560, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s5/defend",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $('Incoming message').item.json.body.message_id }) }}",
+        "options": {}
+      },
+      "id": "n5-defend",
+      "name": "S5 DEFEND - prosecutor vs defender",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [780, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "version": 2 },
+          "conditions": [
+            {
+              "id": "risk-gate",
+              "leftValue": "={{ $json.safety_forced }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n5b-gate",
+      "name": "Safety constraint fired?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1000, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s6/decide",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $('Incoming message').item.json.body.message_id }) }}",
+        "options": {}
+      },
+      "id": "n6-decide",
+      "name": "S6 DECIDE - expected loss",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1220, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8420/s7/express",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message_id: $('Incoming message').item.json.body.message_id }) }}",
+        "options": {}
+      },
+      "id": "n7-express",
+      "name": "S7 EXPRESS - calibrated row",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1440, 300]
+    },
+    {
+      "parameters": {
+        "content": "## LEITWERK\n\nSeven stages, rendered as a DAG.\n\nEach node calls `code/serve.py`, which wraps the\ndeterministic Python core.\n\n**This workflow never gates `output.csv`.**\nIf n8n is down, `python code/main.py --run`\nstill produces the full submission.\n\nStart the backend first:\n\n    python code/serve.py --port 8420",
+        "height": 320,
+        "width": 400
+      },
+      "id": "note",
+      "name": "About",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-320, -120]
+    }
+  ],
+  "connections": {
+    "Incoming message": {
+      "main": [[{ "node": "S1 PERCEIVE - OCR / ASR", "type": "main", "index": 0 }]]
+    },
+    "S1 PERCEIVE - OCR / ASR": {
+      "main": [[{ "node": "S2 FEATURIZE - signals", "type": "main", "index": 0 }]]
+    },
+    "S2 FEATURIZE - signals": {
+      "main": [[{ "node": "S3 RETRIEVE - evidence", "type": "main", "index": 0 }]]
+    },
+    "S3 RETRIEVE - evidence": {
+      "main": [[{ "node": "S4 BELIEVE - dual posterior", "type": "main", "index": 0 }]]
+    },
+    "S4 BELIEVE - dual posterior": {
+      "main": [[{ "node": "S5 DEFEND - prosecutor vs defender", "type": "main", "index": 0 }]]
+    },
+    "S5 DEFEND - prosecutor vs defender": {
+      "main": [[{ "node": "Safety constraint fired?", "type": "main", "index": 0 }]]
+    },
+    "Safety constraint fired?": {
+      "main": [
+        [{ "node": "S7 EXPRESS - calibrated row", "type": "main", "index": 0 }],
+        [{ "node": "S6 DECIDE - expected loss", "type": "main", "index": 0 }]
+      ]
+    },
+    "S6 DECIDE - expected loss": {
+      "main": [[{ "node": "S7 EXPRESS - calibrated row", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "pinData": {},
+  "meta": { "instanceId": "leitwerk-orchestrate-august26" },
+  "tags": [{ "name": "leitwerk" }]
+}

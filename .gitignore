@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# Hackathon submission bundle (zip, chat transcript, copy of output.csv)
+submission/
+
+# Critic replies are only used when ANTHROPIC_API_KEY is set, so a default run
+# does not need this file. No code reads critic_invocations.json; it was a
+# one-off audit record of the live critic run and contains message text.
+critic_cache.json
+critic_invocations.json
+
+# Contest-provided agent instructions for the hackathon, not part of the project
+AGENTS.md
+
+# Contest-provided files that are not redistributed. The images and voice notes
+# contain real phone numbers and an email address. media_cache.json holds their
+# redacted OCR and transcripts, so output.csv reproduces without them.
+dataset/media/
+problem_statement.md
+
+# semantic_cache.json and media_cache.json are NOT ignored on purpose. Without
+# them a machine lacking the ML packages produces a different output.csv
+# (29 and 13 rows differ). See README, "Reproducibility".
