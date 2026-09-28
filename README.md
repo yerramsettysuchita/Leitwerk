@@ -84,7 +84,7 @@ flowchart LR
 | What was measured | Result | What it tells you |
 |:--|:--:|:--|
 | 🏆 **Hidden test set** (final leaderboard) | **Rank 484 of 1,983** | How it really does on unseen data |
-| 🧪 **Held-out attack messages** (written by hand) | **100%** caught, **0%** false alarms | The safety layer generalises |
+| 🧪 **Held-out attack messages** (written by hand) | **100%** caught, **0%** false alarms | Passes a small hand-written test (10 attacks, 7 genuine), tuned once after the first run |
 | 🔁 **Reworded message pairs** | **75%** route the same way | Wording changes still move some decisions |
 | 🎯 **30 labelled samples** | **100%** action, type and reason | How well it fits the data it was built on |
 | 📎 **Evidence recall** on samples | **89.3%** | It usually cites the same past messages as the answer key |
